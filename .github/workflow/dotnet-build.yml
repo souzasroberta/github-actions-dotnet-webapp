@@ -1,5 +1,6 @@
 on:
   push:
+    branches: [main]  # Ajuste para o branch que você usa
       schedule:
     - cron: '0 * * * *'  # Executa a cada hora (no minuto 0)
 
@@ -17,7 +18,11 @@ jobs:
           dotnet-version: '8.0.x'  # Ajuste para a versão que você usa
 
       - name: Restaurar dependências
-        run: dotnet restore github4women/github4women.csproj
-
-      - name: Build do projeto
-        run: dotnet build --no-restore --configuration Release```
+        run: |
+          echo "Restaurando dependências..."
+          dotnet restore **/*.csproj
+     
+      - name: Build
+        run: |
+          echo "Compilando projeto..."
+          dotnet build **/*.csproj --no-restore
