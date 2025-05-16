@@ -17,7 +17,7 @@ jobs:
           dotnet-version: '7.0.x'  # Ajuste para a versão que você usa
 
       - name: Restaurar dependências
-        run: dotnet restore
+        run: dotnet restore github4women/github4women.csproj
 
       - name: Build do projeto
         run: dotnet build --no-restore --configuration Release```
