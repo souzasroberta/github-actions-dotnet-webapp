@@ -1,8 +1,8 @@
 on:
   push:
-    branches: [main]  # Ajuste para o branch que você usa
-      schedule:
-    - cron: '0 * * * *'  # Executa a cada hora (no minuto 0)
+      branches: [ "main" ]  # Ajuste para o branch que você usa
+  schedule:
+        - cron: '0 * * * *'  # Executa a cada hora (no minuto 0)
 
 jobs:
   build:
